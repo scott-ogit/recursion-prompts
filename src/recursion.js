@@ -65,13 +65,16 @@ var isEven = function(n) {
 
     n = Math.abs(n);
 
-    if (n === 0) {
-        return true;
-    } else if ( n === 1) {
-        return false;
-    } else {
-        return isEven( n - 2 );
+    if ( n === 0) {
+      return true;
     }
+
+    if ( n === 1 ) {
+      return false;
+    }
+
+     return isEven ( n - 2 );
+
 };
 
 // 5. Sum all integers below a given integer.
