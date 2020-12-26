@@ -105,17 +105,30 @@ var sumBelow = function(n) {
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
 
-  if (y - x === 2) {
+  var result = [];
+  var higher = 0;
+  var lower = 0;
 
-    return [ x + 1 ];
-
+  if ( y > x ) {
+    higher = y;
+    lower = x;
+  } else if ( x > y ) {
+    higher = x;
+    lower = y;
   } else {
-
-    var list = range(x, y - 1);
-    list.push(y - 1);
-    return list;
-
+    return [];
   }
+
+  if (higher - lower === 2) {
+    return [lower + 1];
+  }
+  if ( higher - lower === 1 ) {
+    return [];
+  }
+
+  result = range(lower, higher - 1);
+  result.push(higher - 1);
+  return result;
 
 };
 
